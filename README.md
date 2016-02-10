@@ -5,5 +5,5 @@ This is a repository made for the purpose for help in online contests where spee
 
 In these cases we look online for sample codes or search for similar problems. This takes up lot of our time which we cannot afford. 
 
-I have made this repo to help me during contests.Codes commited will be mine which I may have implemented during practice or contests on various online judges. 
+I have made this repo to help me during contests.Codes commited are mine which I may have implemented during practice or contests on various online judges. I will keep adding more codes... 
 
