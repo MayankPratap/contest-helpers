@@ -23,7 +23,7 @@ void insert(string s) {
 		else current = node[current].next[s[i]-'a'];  //already present --> so just update current
 
 		//setting flag for last character of string
-		if(i == s[s.length()-1]) {
+		if(i == s.length()-1) {
 			node[current].flag = 1;
 		}
 	}
