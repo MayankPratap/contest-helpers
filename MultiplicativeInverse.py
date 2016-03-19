@@ -14,7 +14,9 @@ inv=[1]*N
 
 
 for i in xrange(2,N):
-    inv[i]=(mod-mod/i)*inv[mod%i] % mod     
+    inv[i]=(mod-mod/i)*inv[mod%i] % mod    
+    
+# Calculating x! and multiplicative inverse of x!  where x=2..N    
 
 for i in xrange(2,N):
     fac[i]=fac[i-1]*i % mod
