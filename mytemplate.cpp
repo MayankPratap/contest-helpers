@@ -3,7 +3,6 @@
    MNNIT, 2nd year IT
          
    AC ho.
-
 */
 #include<bits/stdc++.h>
 using namespace std;
@@ -22,12 +21,13 @@ const ll INF64=(ll)(1e18);
 const ld EPS=1e-9;
 const ld PI=3.1415926535897932384626433832795;
 
-vector<int>vi;
-vector<pair<int,int> >vii;
-vector<list<int> >adjList;
-map<int,int>mi;
-map<string,int>ms;
-set<int>si;
+
+typedef vector<int> vi;
+typedef vector<pair<int,int> > vii;
+typedef vector<list<int> > vl;
+typedef map<int,int> mi;
+typedef map<string,int> ms;
+typedef set<int> si;
 
 
 int main(){
@@ -40,4 +40,4 @@ int main(){
 
 
     return 0;
-} 
+}
