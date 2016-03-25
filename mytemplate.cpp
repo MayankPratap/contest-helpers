@@ -1,21 +1,8 @@
 /*  
-    This code is powered by ASCII ART and C++. 
-
-    _._ _..._ .-',     _.._(`))
-'-. `     '  /-._.-'    ',/
-   )         \            '.
-  / _    _    |             \
- |  a    a    /              |
- \   .-.                     ;  
-  '-('' ).-'       ,'       ;
-     '-;           |      .'
-        \           \    /
-        | 7  .__  _.-\   \
-        | |  |  ``/  /`  /
-       /,_|  |   /,_/   /
-          /,_/      '`-'
-          
-   ....   Please give me AC   ......  
+   Mayank Pratap Singh
+   MNNIT, 2nd year IT
+         
+   AC ho.
 
 */
 #include<bits/stdc++.h>
@@ -34,6 +21,14 @@ const int INF=(int)(1e9);
 const ll INF64=(ll)(1e18);
 const ld EPS=1e-9;
 const ld PI=3.1415926535897932384626433832795;
+
+vector<int>vi;
+vector<pair<int,int> >vii;
+vector<list<int> >adjList;
+map<int,int>mi;
+map<string,int>ms;
+set<int>si;
+
 
 int main(){
 	
