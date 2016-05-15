@@ -25,6 +25,7 @@ const ld PI=3.1415926535897932384626433832795;
 typedef vector<int> vi;
 typedef vector<pair<int,int> > vii;
 typedef vector<list<int> > vl;
+typedef vector<list<pair<int,int> > > vlp;
 typedef map<int,int> mi;
 typedef map<string,int> ms;
 typedef set<int> si;
