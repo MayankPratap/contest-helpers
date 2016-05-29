@@ -1,5 +1,4 @@
 // Given an array of integers we have to find two elements whose XOR is maximum.
-// This solution is using Tries.
 /*
    Mayank Pratap Singh
    MNNIT, 2nd year IT
