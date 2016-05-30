@@ -28,34 +28,57 @@ typedef set<int> si;
 
 const int MAx=1e5+5;
 
-int parent[MAX],n,m;
+int parent[MAX],n,m,size[MAX];
 vector<pair<ll,pair<int,int> > >adjList;
 
 void initialize(){
 
-    // Initially every node is a parent of itself
-    for(int i=0;i<MAx;++i)
-       parent[i]=i;
-       
+  // Initially every node is a parent of itself
+  for(int i=0;i<MAX;++i){
+     parent[i]=i;
+     size[i]=1;  // Initially size of each component is 1
+  }
+
 }
+
+// Since we have used Union By Rank
+ // Complexity of root() changes from n to logn
+
 int root(int x){
 
+   // Now using path compression.
+
    while(parent[x]!=x){
-   
+
+      parent[x]=parent[parent[x]]; // Grandpa
       x=parent[x];
-   
+
    }
-   
+
    return x;
 
 }
 
-void union1(int x,int y){
+// I have used Union By Rank
 
-   int p=root(x);
-   int q=root(y);
-   
-   parent[p]=parent[q];
+void union(int x,int y){
+
+  int p=root(x);
+  int q=root(y);
+
+  if(size[p]<size[q]){
+
+     parent[p]=parent[q];
+     size[q]+=size[p];
+  }
+
+  else{
+
+     parent[q]=parent[p];
+     size[p]+=size[q];
+
+  }
+
 
 }
 
