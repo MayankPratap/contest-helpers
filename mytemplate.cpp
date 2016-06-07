@@ -9,7 +9,6 @@ using namespace std;
 #define ss second
 #define pb push_back
 #define mp make_pair
-
 #define MOD 1000000007
 
 typedef long long ll;
@@ -23,12 +22,19 @@ typedef vector<int> vi;
 typedef vector<pair<int,int> > vii;
 typedef vector<list<int> > vl;
 typedef vector<list<pair<int,int> > > vlp;
-typedef vector<list<pair<int,double> > >vld;  
+typedef vector<list<pair<int,double> > >vld;
 typedef map<int,int> mi;
 typedef map<string,int> ms;
 typedef set<int> si;
-typedef priority_queue<pair<double,int>,vector<pair<double,int> >,greater<pair<double,int> > > queue_double;
-typedef priority_queue<pair<int,int>,vector<pair<int,int> >,greater<pair<int,int> > > queue_int;
+
+bool compare(const pair<int,int>&i,const pair<int,int>&j){
+
+    if(i.first==j.first)         // Decreasing order according to second coordinate
+      return i.second>j.second;
+
+    return i.first<j.first;   // Increasing order according to first coordinate
+
+}
 
 
 int main(){
