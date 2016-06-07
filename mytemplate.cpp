@@ -29,10 +29,14 @@ typedef set<int> si;
 
 bool compare(const pair<int,int>&i,const pair<int,int>&j){
 
-    if(i.first==j.first)         // Decreasing order according to second coordinate
-      return i.second>j.second;
+   bool compare(const pair<int,int>&i,const pair<int,int>&j){
 
-    return i.first<j.first;   // Increasing order according to first coordinate
+    if(i.second==j.second)         // Decreasing order according to first coordinate
+      return i.first>j.first;
+
+    return i.second<j.second;   // Increasing order according to second coordinate
+
+}
 
 }
 
