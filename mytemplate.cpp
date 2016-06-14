@@ -27,14 +27,16 @@ typedef map<int,int> mi;
 typedef map<string,int> ms;
 typedef set<int> si;
 
+const int N=1000000;
+
 /*************  Ye mera template hai chutiye apna template khud bana  **************  */
 
 /*******************************************************************************
- 
+
                Hey bitch dont copy my template.
-               
+
                Those who are not able to do anything on their own are the ones
-               who copy templates from others. 
+               who copy templates from others.
 
 *****************************************************************************/
 
@@ -53,19 +55,19 @@ bool compare(const pair<int,int>&i,const pair<int,int>&j){
 /******  Modular Multiplication Function for Long integes  ********/
 
 long long mulmod(long long a,long long b,long long c){
- 
+
     long long x=0,y=a%c;
     while(b>0){
- 
+
         if(b%2==1){
- 
+
             x=(x+y)%c;
- 
+
         }
- 
+
         y=(y*2)%c;
         b/=2;
- 
+
     }
     return x%c;
 }
@@ -73,50 +75,47 @@ long long mulmod(long long a,long long b,long long c){
 /****** Modular Exponentiation Function For Long Integers  ******/
 
 long long modulo(long long a,long long b,long long c){
- 
+
      long long x=1,y=a;
- 
+
      while(b>0){
- 
+
          if(b%2==1){
- 
+
              x=mulmod(x,y,c);
          }
          y=mulmod(y,y,c);
          b/=2;
      }
- 
+
      return x%c;
- 
+
 }
 
-/***** Sieve Of Eratosthenes is a Bitch *******/ 
+/***** Sieve Of Eratosthenes is a Bitch *******/
 
 bool prime[2000005];
- 
+
 void sieve(){
- 
+
   memset(prime,true,sizeof(prime));
- 
+
   for(int p=2;p*p<=N;p++){
- 
+
      if(prime[p]==true){
- 
+
         for(int i=p*2;i<=N;i+=p)
           prime[i]=false;
      }
- 
+
   }
 }
 
-
-
 int main(){
-	
-     
-    
 
 
 
-    return 0;
+
+
+   return 0;
 }
