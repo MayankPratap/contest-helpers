@@ -29,16 +29,7 @@ typedef set<int> si;
 
 const int N=1000000;
 
-/*************  Ye mera template hai chutiye apna template khud bana  **************  */
-
-/*******************************************************************************
-
-               Hey bitch dont copy my template.
-
-               Those who are not able to do anything on their own are the ones
-               who copy templates from others.
-
-*****************************************************************************/
+/******** Make your own template ***************/
 
 /* ********* Compare Function for sorting pair of coordinates ************    */
 
