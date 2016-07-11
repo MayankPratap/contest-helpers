@@ -1,6 +1,12 @@
 long long mulmod(long long a,long long b,long long c){
- 
-    long long x=0,y=a%c;
+    
+     __int128 res = a;
+    res *= b;
+    res %= c;
+    a = res;
+    return a;
+
+   /* long long x=0,y=a%c;
     while(b>0){
  
         if(b%2==1){
@@ -13,7 +19,7 @@ long long mulmod(long long a,long long b,long long c){
         b/=2;        
        
     }
-    return x%c;
+    return x%c;  */
 }
 long long modulo(long long a,long long b,long long c){
  
