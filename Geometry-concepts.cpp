@@ -1,5 +1,91 @@
-// Compute the dot product AB.BC
+/* Now computing using Object Oriented Method */
 
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class Point{
+
+   vector<int>cord;
+   public:
+
+      Point(){
+
+         cord.resize(2,0);
+
+      }
+
+      int setX(int x){
+        cord[0]=x;
+      }
+
+      int setY(int y){
+        
+        cord[1]=y;
+      }
+   	  
+      Point operator-(const Point& b){
+ 
+         Point point;
+         point.cord[0]=this->cord[0]-b.cord[0];
+         point.cord[1]=this->cord[1]-b.cord[1];
+         return point;
+      }
+      
+      int operator*(const Point& b){
+
+         int dot=(this->cord[0]*b.cord[0])+(this->cord[1]*b.cord[1]);
+         return dot;
+      }
+
+      int operator^(const Point& b){
+
+         int cross=(this->cord[0]*b.cord[1])-(b.cord[0]*this->cord[1]);
+         return cross;
+      }
+};
+double linePointDist(Point A,Point B,Point C,bool isSegment){
+
+   double dist=((B-A)^(C-A))/sqrt((B-A)*(B-A));
+
+   if(isSegment){
+
+      int dot1=(C-B)*(B-A);
+      if(dot1>0) return sqrt((B-C)*(B-C));
+
+      int dot2=(C-A)*(A-B);
+      if(dot2>0) return sqrt((A-C)*(A-C));
+
+   }
+
+   return abs(dist);
+
+}
+
+int main(){
+
+   Point A;
+   Point B;
+   Point C;
+
+   A.setX(2);
+   A.setY(3);
+   B.setX(6);
+   B.setY(7);
+   C.setX(8);
+   C.setY(11);
+
+   cout<<sqrt((B-A)*(B-A))<<"\n";
+
+   cout<<linePointDist(A,B,C,false)<<"\n";
+
+
+
+}
+
+/* Computing using procedural method 
+
+// Compute the dot product AB.BC
 int dot(vector<int>A,vector<int>B,vector<int>C){
 	
    vector<int>AB(2);
@@ -69,3 +155,5 @@ double linePointDist(vector<int>A,vector<int>B,vector<int>C,int isSegment){
 
 
 }
+
+*/
