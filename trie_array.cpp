@@ -1,5 +1,6 @@
 /*
 Insertion of N strings in a trie
+Deletion Of String in a trie.
 */
 
 #include<bits/stdc++.h>
@@ -8,9 +9,55 @@ using namespace std;
 struct trie {
 	int next[26];
 	int flag;
-}node[10000];
+	int prev;
+}node[100000];
 
 int allocated;
+
+
+void del(string s){
+
+   int current=0,cur;
+
+   for(int i=0;i<s.length();++i){
+
+       current=node[current].next[s[i]-'0'];
+       if(i==s.length()-1){
+
+          cur=current;
+          break;
+       }
+
+   }
+
+   while(cur!=0){
+
+      if(node[cur].next[0]==0 && node[cur].next[1]==0){
+
+          int prev=node[cur].prev;
+
+          if(node[prev].next[0]==cur){
+             
+              node[prev].next[0]=0;
+           
+          }
+          else if(node[prev].next[1]==cur){
+
+              node[prev].next[1]=0;
+
+          }        
+
+          cur=prev;
+  
+      }
+
+      else{
+
+        break;
+      }
+
+   }
+} 
 
 void insert(string s) {
 	int current = 0;  //so root node is node[0]
