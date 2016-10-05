@@ -1,12 +1,6 @@
 long long mulmod(long long a,long long b,long long c){
-    
-     __int128 res = a;
-    res *= b;
-    res %= c;
-    a = res;
-    return a;
-
-   /* long long x=0,y=a%c;
+ 
+    long long x=0,y=a%c;
     while(b>0){
  
         if(b%2==1){
@@ -19,7 +13,7 @@ long long mulmod(long long a,long long b,long long c){
         b/=2;        
        
     }
-    return x%c;  */
+    return x%c;
 }
 long long modulo(long long a,long long b,long long c){
  
@@ -36,16 +30,26 @@ long long modulo(long long a,long long b,long long c){
      }
  
      return x%c;
- 
 }
 
-bool Miller(long long p,int iteration){
+
+int b[]={2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97};
+ 
+bool isPrime(long long p,int iteration){
+	
     if(p<2){
         return false;
     }
     if(p!=2 && p%2==0){
         return false;
     }
+    
+    for(int i=0;i<25;i++){
+        if(p==b[i])return true;
+        else if(p%b[i]==0)return false;
+    }
+    
+ 
     long long s=p-1;
     while(s%2==0){
         s/=2;
@@ -62,4 +66,6 @@ bool Miller(long long p,int iteration){
         }
     }
     return true;
+    
 }
+ 
