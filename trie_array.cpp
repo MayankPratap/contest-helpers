@@ -15,9 +15,9 @@ struct trie {
 int allocated;
 
 
-void del(string s){
+void del(string s){  //  Here is think i have considered a string with 0s and 1s - 2 characters only. 
 
-   int current=0,cur;
+   int current=0,cur=0;
 
    for(int i=0;i<s.length();++i){
 
@@ -25,33 +25,45 @@ void del(string s){
        if(i==s.length()-1){
 
           cur=current;
+	  node[cur].flag=0;   // Remove the mark of end of string
           break;
        }
 
    }
+	
+
 
    while(cur!=0){
 
-      if(node[cur].next[0]==0 && node[cur].next[1]==0){
+      bool hasChildren=false;
+	   
+      for(int i=0;i<26;++i){	 
+	  
+	  if(node[cur].next[i]!=0){
+		 
+	      hasChildren=true;
+	      break;
+		 	  
+	  }
+	      
+      }
+	      
+      if(hasChildren==false && node[cur].flag==0){  // If the node has no children and it does not mark the end of any string- Delete it.
 
           int prev=node[cur].prev;
-
-          if(node[prev].next[0]==cur){
-             
-              node[prev].next[0]=0;
-           
-          }
-          else if(node[prev].next[1]==cur){
-
-              node[prev].next[1]=0;
-
-          }        
-
+	      
+	  for(int i=0;i<26;++i){
+	
+	      if(node[prev].next[i]==cur){
+	      	 node[prev].next[i]=0;
+		 break;      
+	      }  
+	  }
+	      
           cur=prev;
-  
       }
 
-      else{
+      else{  //  If the node has a child -  one or two or many -  I can't delete it.
 
         break;
       }
@@ -64,6 +76,7 @@ void insert(string s) {
 	for(int i = 0; i < s.length(); i++) {
 		if(node[current].next[s[i]-'a'] == 0) { //no link --> so allocate it
 			node[current].next[s[i]-'a'] = allocated;
+			node[allocated].prev=node[current];  // Make pointer to parent node:- to be used in deletion.
 			current = allocated;
 			allocated++;
 		}
