@@ -57,7 +57,9 @@ void union(int x,int y){
 	 
    int p=root(x);
    int q=root(y);
-
+	 
+   if(p==q) return;
+	
    if(size[p]<size[q]){
 
       parent[p]=parent[q];
